@@ -57,10 +57,12 @@
     user-select: none;
     white-space: nowrap;
     overflow: hidden;
+    max-width: 90vw;
     min-width: 120px;
     padding: 10px 20px;
     position: absolute;
     z-index: 10;
+    text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
