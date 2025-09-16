@@ -59,7 +59,7 @@ window.addEventListener('load', function() {
     button.style.position = 'absolute';
     button.style.left = `${centerX + window.scrollX}px`;
     button.style.top = `${centerY + window.scrollY}px`;
-    button.style.transition = 'left 0.3s ease, top 0.3 ease';
+    button.style.transition = 'left 0.3s ease, top 0.3s ease';
 
 });
 
