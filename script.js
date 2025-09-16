@@ -30,24 +30,24 @@ function manejarClick (e) {
 
         //Ajustar estilo según longitud:
         if (nuevoTexto.length > 20) {
-            button.style.fontSize = '14px';
+            // button.style.fontSize = '14px';
             button.style.padding = '8px 16px';
         } else if (nuevoTexto.length > 15) {
-            button.style.fontSize = '15px';
+            // button.style.fontSize = '15px';
             button.style.padding = '9px 18px';
         } else {
-            button.style.fontSize = '16px';
+            // button.style.fontSize = '16px';
             button.style.padding = '10px 20px';
         }
 
         //Calcular nuevo ancho:
-        // button.getBoundingClientRect();
-        // //Centrar nuevo ancho:
-        // const centerX = (window.innerWidth - button.offsetWidth) / 2;
-        // const centerY = parseFloat(button.style.top) || (window.innerHeight - button.offsetHeight) / 2;
+        button.getBoundingClientRect();
+        //Centrar nuevo ancho:
+        const centerX = (window.innerWidth - button.offsetWidth) / 2;
+        const centerY = parseFloat(button.style.top) || (window.innerHeight - button.offsetHeight) / 2;
 
-        // button.style.left = `${centerX + window.scrollX}px`;
-        // button.style.top = `${centerY + window.scrollY}px`;
+        button.style.left = `${centerX + window.scrollX}px`;
+        button.style.top = `${centerY + window.scrollY}px`;
         //Mantiene verticalidad
 
         //Mover botón
