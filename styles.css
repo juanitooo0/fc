@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 #landing-page {
@@ -43,8 +44,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    padding: 10px 40px;
     color: rgba(131, 129, 129, 0.911);
     background: rgba(0, 25, 250, 0.04);
     backdrop-filter: blur(10px), brightness(1.1);
@@ -56,6 +55,19 @@
     transition: all 0.3s ease;
     text-decoration: none;
     user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 120px;
+    padding: 10px 20px;
+    position: absolute;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .entry-button {
+        font-size: 14px;
+        padding: 8px 30px;
+    }
 }
 
 .entry-button:hover {
