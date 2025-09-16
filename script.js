@@ -50,12 +50,15 @@ function manejarClick (e) {
 button.addEventListener('click', manejarClick);
 
 window.addEventListener('load', function() {
-    const initialX = (window.innerHeight - button.offsetWidth) / 2;
-    const initialY = (window.innerHeight - button.offsetHeight) / 2;
+
+    button.getBoundingClientRect();
+
+    const centerX = (window.innerWidth - button.offsetWidth) / 2;
+    const centerY = (window.innerHeight - button.offsetHeight) / 2;
 
     button.style.position = 'absolute';
-    button.style.left = `${initialX + window.scrollX}px`;
-    button.style.top = `${initialY + window.scrollY}px`;
+    button.style.left = `${centerX + window.scrollX}px`;
+    button.style.top = `${centerY + window.scrollY}px`;
     button.style.transition = 'left 0.3s ease, top 0.3 ease';
 
 });
