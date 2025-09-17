@@ -102,7 +102,227 @@
 }
 
 #main-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    padding: 60px 20px;
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.hero-card {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.left-card {
+    background-color: #2d3748;    
+}
+
+.left-card .card-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.right-card {
+    background-color: #688265;
+    padding: 4rem 3rem;
+    box-sizing: border-box;
+}
+
+.card-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card-label {
+    display: block;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display' serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.card-title {
+    font-family: 'Playfair Display' serif; /* ✍️ Nueva fuente */
+    font-size: 3rem; /* ✅ Mismo impacto visual, pero más personal */
+    font-weight: 700;
+    margin: 1rem 0;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* ✨ Sutil sombra para profundidad */
+}
+
+/* Evitar desbordamiento */
+.card-description {
+    font-size: 1.125rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin: 1rem 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Animación */
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+    #main-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-card {
+        width: 100vw;
+        height: auto;
+        min-height: 50vh;
+    }
+
+    .left-card {
+        height: 75vh;
+    }
+}
+
+/* ✅ Estilo base para elementos que se animarán */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ✅ Clase que se agrega cuando el elemento está en viewport */
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ✅ Opcional: hover sutil para dar feedback */
+.fade-in-up:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.ambient-audio {
+    max-width: 700px;
+    margin: 3rem auto 4rem; /* ✅ Espacio arriba y abajo */
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.ambient-audio p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.ambient-audio audio {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Hover effect for audio player container */
+.ambient-audio:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.ambient-audio:hover audio {
+    border-color: #a8dadc;
+}
+
+.blog-post {
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    font-family: Georgia, serif; /* ✍️ Estilo editorial */
+    line-height: 1.8;
+    color: #333;
+}
+
+.post-title {
+    font-family: 'Monument Grotesk', sans-serif; /* o cualquier sans-serif elegante */
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.post-section {
+    margin-bottom: 2.5rem;
+}
+
+.post-section p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-left: 4px solid #688265;
+    margin: 2rem 0;
+}
+
+.closing-wish {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.fun-fact {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #ccc;
+}
+
+.fun-fact-label {
+    font-weight: bold;
+    color: #2d3748;
 }
