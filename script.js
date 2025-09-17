@@ -14,7 +14,7 @@ const buttonTexts = [
     'Tampoco era este',
     'Quizá, probablemente, umm',
     '¿Ya casi?',
-    'Ok, por finnnnn!!!',
+    'Este tampoco es',
 ];
 
 // button.addEventListener('click', function(e) 
@@ -72,15 +72,13 @@ function manejarClick (e) {
         }, 1000);
 
     }
+    console.log("%Te amo!!!<3");
 };
 
 button.addEventListener('click', manejarClick);
 
 window.addEventListener('load', function() {
 
-    // button.getBoundingClientRect();
-
-    // const centerX = (window.innerWidth - button.offsetWidth) / 2;
     const centerY = (window.innerHeight - button.offsetHeight) / 2;
     button.style.position = 'absolute';
     button.style.left = '50%';
@@ -96,18 +94,6 @@ function moveButtonRandomly(button, options = {}) {
         console.warn('Elemento no encontrado');
         return;
     }
-
-    // const {
-    //     container = window,   // Limitar movimiento?
-    //     useTransition = true, //Animar movimiento
-    //     transitionDuration = '0.3s'
-    // } = options;
-
-    // const containerRect = container === window
-    //     ? {width: window.innerWidth, height: window.innerHeight}
-    //     : container.getBoundingClientRect();
-
-    // const buttonRect = button.getBoundingClientRect();
 
     const { useTransition = true, transitionDuration = '0.3s'} = options;
 
