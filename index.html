@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japi berday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="Assets/my-notion-face-transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Button section -->
+    <section id="landing-page">
+        <button class="entry-button" id="movingButton">Ingresar</button>
+        <div class="contador-intentos" id="contadorIntentos"></div>
+        <div class="mensaje-felicitacion" id="mensajeFelicitacion"></div>
+    </section>
+
+     <!--Main section-->
+    <section id="main-section" class="hidden">
+        <div class="hero-card left-card" type="hero">
+            <div class="card-image">
+                <img src="Assets/my-notion-face-transparent.png" alt="Imagen decorativa" loading="eager">
+            </div>
+        </div>
+        <div class="hero-card right-card">
+            <div class="card-content">
+                <span class="card-label">Para: Ana</span>
+                <h2 class="card-title">¡¡Feliz cumple!!</h2>
+                <!-- <p class="card-description">Encontrar varios recuerdos</p> -->
+            </div>    
+        </div>
+
+        <article class="blog-post">
+
+            <div class="ambient-audio fade-in-up">
+                <p>Canción random para el momento</p>
+                <audio controls>
+                    <source src="Assets/After Midnight.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <header class="post-header fade-in-up">
+                <h1 class="post-title">¡¡Feliz cumple x2!!</h1>
+            </header>
+
+            <section class="post-section fade-in-up">
+                <p>
+                    Siempre he dicho que <strong>nunca sé cómo iniciar los mensajes de cumpleaños</strong> (también sé que complico las cosas, como hacer todo una página web como “detalle” de cumpleaños en lugar de escribir directamente en el chat, pero bueno, creo que al final siempre he tratado de dar un poco de mí o de aquello que me genera curiosidad/interés en estas situaciones). 
+                    ¿Debería iniciar con un <em>“¡Feliz cumpleaños!”</em> o con <em>“Bueno, espero qué…”</em>? En fin, situaciones que pasan.
+                </p>
+            </section>
+
+            <section class="post-section fade-in-up">
+                <p>
+                    Aunque la vida ha cambiado bastante en estos últimos meses, hay algo que <strong>no ha cambiado</strong> (y a lo mejor nunca cambie) y es esa <em>“sensación/petición (ese algo)”</em> de ojalá la vida sea amable con ella y la trate con el amor que merece. 
+                    También están los <em>“ojalá y pueda cumplir todas aquellas cosas que solo ella conoce y le hacen tanta ilusión”</em>, y así con muchas más cosas, muchos ojalá que. y muchos espero
+                </p>
+            </section>
+
+            <section class="post-section fade-in-up">
+                <blockquote class="highlight-quote">
+                    Independiente a los días, meses o años que transcurran, pero en especial para este momento, ojalá la vida te permita cumplir, lograr, completar y tener la satisfacción de tener todo aquello que mereces y quieres.
+                </blockquote>
+                <p>
+                    Que puedas vivir un mundo de aventuras, que puedas seguir creciendo y mejorando en todo ámbito en el que pongas tu interés. Después de todo, sé lo increíble y dedicada que eres (también lo crítica que puedes llegar a ser). Tengo muy claro que eres capaz de lograr y conseguir más de lo que crees.
+                </p>
+            </section>
+
+            <section class="post-section fade-in-up">
+                <p>
+                     Recurriendo a la frase de siempre, <em>hay mucho por decir, pero… es momento de darle cierre al mensaje</em>.
+                </p>
+                <p class="closing-wish">
+                    <strong>¡Te deseo un feliz cumpleaños!</strong> Siempre habrá alguien ahí afuera deseando que te sucedan cosas más que increíbles, esperando que en medio del proceso (aunque complicado y tedioso) puedas ser feliz, tener tranquilidad y hallarte en un mejor lugar al que iniciaste.
+                </p>
+                <p>
+                    ¡De nuevo, feliz cumpleaños, te mando muchos abrazo!
+                </p>
+            </section>
+
+            <footer class="post-footer fade-in-up">
+                <p class="fun-fact">
+                    <span class="fun-fact-label">Dato curioso:</span> Sabías que el 16 de septiembre se celebra el día del guacamole.
+                </p>
+            </footer>
+        </article>
+
+    </section>
+
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Opcional: dejar de observar después de animar (mejora rendimiento)
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15, // Se activa cuando el 15% del elemento es visible
+                rootMargin: '0px 0px -50px 0px' // Acelera la animación un poco antes de que el elemento esté completamente en pantalla
+            });
+
+            // Observar todos los elementos con la clase 'fade-in-up'
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
